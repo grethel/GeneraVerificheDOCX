@@ -28,7 +28,10 @@ os e datetime per la gestione dei file e delle cartelle
 📂 Struttura delle cartelle
 
 📁 domande/              → contiene i file Excel con le domande
+
 📁 domande_manuali/      → contiene eventuali configurazioni manuali
+
 📁 compiti/              → cartella di output dei compiti generati
+
 📝 compitogen.py         → script principale
 
