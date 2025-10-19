@@ -1,4 +1,5 @@
 GeneraVerificheDOCX è un generatore automatico di compiti in formato .docx pensato per docenti.
+Sistema operativo: Windows
 Il software consente di estrarre in modo casuale o manuale un insieme di domande da un paniere Excel, suddiviso per tipologia (risposta multipla o aperta), e di creare automaticamente più versioni personalizzate dei compiti.
 
 Ogni compito viene salvato in una cartella dedicata, completo di punteggi, titoli e formattazione, pronto per la stampa o la distribuzione digitale.
