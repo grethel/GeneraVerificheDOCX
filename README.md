@@ -1,107 +1,114 @@
-GeneraVerificheDOCX è un generatore automatico di compiti in formato .docx pensato per docenti.
-Sistema operativo: Windows
-Il software consente di estrarre in modo casuale o manuale un insieme di domande da un paniere Excel, suddiviso per tipologia (risposta multipla o aperta), e di creare automaticamente più versioni personalizzate dei compiti.
+# Generatore di Verifiche Personalizzate
 
-Ogni compito viene salvato in una cartella dedicata, completo di punteggi, titoli e formattazione, pronto per la stampa o la distribuzione digitale.
+Un tool standalone per creare compiti e verifiche in formato Word (.docx) a partire da un file Excel di domande.  
+ 
+---
 
-✨ Funzionalità principali
+## 📝 Funzionalità principali
 
-Selezione del file Excel contenente le domande
+- Generazione di compiti **casuale** o **manuale**.
+- Supporto per **domande a risposta multipla (RM)** e **risposta aperta (RA)**.
+- Possibilità di personalizzare:
+  - **Intestazione**: “VERIFICA DI [MATERIA]” con riga Nome/Cognome/Classe/Data sulla prima pagina.
+  - **Font e dimensione del testo**.
+  - **Margini** superiori, inferiori, sinistro e destro.
+  - **Layout a una o due colonne** per il corpo del testo.
+- Domande a risposta aperta senza righe vuote aggiuntive.
+- Creazione automatica di cartelle di output con timestamp.
 
-Generazione casuale o manuale dei compiti
+---
 
-Mescolamento automatico delle domande e delle risposte
+## ⚡ Requisiti
 
-Creazione automatica di file Word (.docx) pronti all’uso
+- Windows 10/11 (64-bit consigliato)
+- File Excel con le domande organizzate in colonne:
+  - `Tipo` (RM o RA)
+  - `Domanda`
+  - `Risposta 1` … `Risposta 4` (per domande RM)
 
-Gestione ordinata dei compiti generati in cartelle datate
+---
 
-⚙️ Tecnologie utilizzate
+## 🚀 Utilizzo
 
-Python 3
+1. Scaricare o copiare il file `GeneratoreCompiti.exe`.
+2. Preparare la cartella `domande/` con i file Excel delle domande.
+3. Avviare l’eseguibile facendo doppio clic su `GeneratoreCompiti.exe`.
+4. Seguire le istruzioni interattive:
+   - Inserire il nome della materia.
+   - Scegliere margini, font, dimensione del carattere.
+   - Decidere se usare due colonne o meno.
+   - Selezionare modalità casuale o manuale.
+   - Indicare numero di domande per tipo e punti assegnati.
+5. I compiti generati saranno salvati nella cartella `compiti/` con timestamp.
 
-pandas per la gestione dei dati
+---
 
-python-docx per la generazione dei documenti Word
+ # Generatore di Verifiche Personalizzate
 
-os e datetime per la gestione dei file e delle cartelle
+Un tool standalone per creare compiti e verifiche in formato Word (.docx) a partire da un file Excel di domande.  
+Il programma è già compilato in formato `.exe` per Windows, quindi non è necessario installare Python.
 
-📂 Struttura delle cartelle
+---
 
-📁 domande/              → contiene i file Excel con le domande
+## 📝 Funzionalità principali
 
-📁 domande_manuali/      → contiene eventuali configurazioni manuali
+- Generazione di compiti **casuale** o **manuale**.
+- Supporto per **domande a risposta multipla (RM)** e **risposta aperta (RA)**.
+- Possibilità di personalizzare:
+  - **Intestazione**: “VERIFICA DI [MATERIA]” con riga Nome/Cognome/Classe/Data sulla prima pagina.
+  - **Font e dimensione del testo**.
+  - **Margini** superiori, inferiori, sinistro e destro.
+  - **Layout a una o due colonne** per il corpo del testo.
+- Domande a risposta aperta senza righe vuote aggiuntive.
+- Creazione automatica di cartelle di output con timestamp.
 
-📁 compiti/              → cartella di output dei compiti generati
+---
 
-📝 compitogen.py         → script principale
+## ⚡ Requisiti
 
+- Windows 10/11 (64-bit consigliato)
+- File Excel con le domande organizzate in colonne:
+  - `Tipo` (RM o RA)
+  - `Domanda`
+  - `Risposta 1` … `Risposta 4` (per domande RM)
 
-📋 Struttura del / dei file Excel delle domande
+---
 
-Perché il programma funzioni correttamente, i file Excel devono rispettare una struttura ben definita. Di seguito le indicazioni su come formattare i fogli di calcolo.
+## 🚀 Utilizzo
 
-1. Foglio singolo e intestazioni obbligatorie
+1. Scaricare o copiare il file `GeneratoreCompiti.exe`.
+2. Preparare la cartella `domande/` con i file Excel delle domande.
+3. Avviare l’eseguibile facendo doppio clic su `GeneratoreCompiti.exe`.
+4. Seguire le istruzioni interattive:
+   - Inserire il nome della materia.
+   - Scegliere margini, font, dimensione del carattere.
+   - Decidere se usare due colonne o meno.
+   - Selezionare modalità casuale o manuale.
+   - Indicare numero di domande per tipo e punti assegnati.
+5. I compiti generati saranno salvati nella cartella `compiti/` con timestamp.
 
-Il file Excel deve avere un solo foglio (o almeno le domande devono risiedere in un foglio principale)
+---
 
-Le colonne intestazione (header) devono essere presenti nella prima riga
+## 📂 Struttura dei file
 
-I nomi delle colonne devono essere esatti (case sensitive in parte) come descritto qui sotto
+├── domande/
+│ └── esempio_domande.xlsx
+├── domande_manuali/
+│ └── domande_manuali.xlsx
+├── GeneratoreCompiti.exe
+└── README.md
 
-2. Colonne richieste
+## 📌 Note
 
-Ecco le colonne richieste / supportate e il loro significato:
+- L’intestazione è **solo sulla prima pagina** e rimane fuori dalle colonne.
+- Le domande a risposta aperta non contengono righe vuote extra per migliorare la compattezza.
+- Ogni documento Word generato rispetta i margini e il layout impostati.
+- Nessuna installazione di Python richiesta: il programma è pronto all’uso.
 
-Colonna	               Obbligatoria	             Descrizione
+---
 
-Tipo	                  Sì	                       Deve essere “RM” per domande a Risposta Multipla oppure “RA” per domande a Risposta Aperta
+## ✨ Autore
 
-Domanda	                Sì	                       Il testo della domanda, che sarà stampato nel compito
-
-Risposta 1, Risposta 2, Risposta 3, Risposta 4	   Solo per RM	Le possibili opzioni, se la colonna esiste e il valore non è vuoto, viene considerata come opzione valida
-
-(Altre colonne – opzionali)	No	       Puoi aggiungere altre colonne (es. categoria, livello, tag, spiegazione) purché non interferiscano con le colonne obbligatorie
-
-Nota bene:
-
-Per le domande a risposta aperta (“RA”), non è necessario avere le colonne “Risposta 1…4”. Se presenti, verranno ignorate.
-
-Se in una riga di “RM” alcune colonne tra “Risposta 1 … Risposta 4” sono vuote o non presenti, verranno semplicemente escluse dalla generazione delle opzioni.
-
-3. Esempio di file Excel
-
-Immagina un file chiamato domande_esempio.xlsx con questo contenuto:
-
-Tipo	Domanda	Risposta 1	Risposta 2	Risposta 3	Risposta 4
-
-RM	Qual è la capitale d’Italia?	Roma	Milano	Napoli	Torino
-
-RM	Quale numero è primo?	4	9	7	10
-
-RA	Spiega la teoria della relatività.				
-
-RA	Quali sono le caratteristiche dell’acqua?				
-
-Le prime due righe sono domande a risposta multipla (RM) e hanno quattro opzioni
-
-Le ultime due sono a risposta aperta (RA) e non richiedono opzioni
-
-4. File per generazione manuale
-
-Se utilizzi la modalità manuale (genera_manuale), è richiesto un file di configurazione chiamato domande_manuali.xlsx nella cartella domande_manuali/. Le sue colonne tipiche possono essere:
-
-Compito	RM	RA
-
-1	“1,3,5”	“2,4”
-
-2	“2,4,6”	“3,5”
-
-Compito: numero identificativo del compito
-
-RM: una stringa con gli indici (1-based) delle domande RM da includere
-
-RA: una stringa con gli indici delle domande RA da includere
-
-Questi indici devono riferirsi alle righe del file principale di domande (solo alle righe pertinenti di quel tipo, RM o RA). Il programma leggerà quelle righe, le mescolerà e genererà il compito corrispondente.
+- **Lucia Intelisano**  
+- GitHub:  https://github.com/grethel
 
