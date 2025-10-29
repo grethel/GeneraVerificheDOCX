@@ -1,0 +1,1 @@
+mi serve un paniere di 50 domande a risposta multipla con 4 risposte e una esatta, 30 domande a risposta aperta. Le domande si devono esportare in csv, con colonna tipo (RM o RA), domanda, risposta 1, risposta 2, risposta 3, risposta 4, risposta esatta (deve contenere la stringa non l'indice della risposta) e il delimitatore deve essere il ;
